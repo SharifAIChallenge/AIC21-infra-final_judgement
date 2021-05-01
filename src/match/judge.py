@@ -156,6 +156,9 @@ def judge(players, map_id, game_id) -> [Event]:
 
     # upload game log
     try:
+        # zip the file
+        os.system(f"(cd `dirname {match_record_path}` && tar -cvzf  temp.tgz `basename {match_record_path}` && mv temp.tgz `basename {match_record_path}`)")
+        # upload
         with open(match_record_path, 'rb') as file:
             if not MinioClient.upload_logs(path=game_id, file=file, file_name=game_id):
                 resulting_events.append(Event(token=game_id, status_code=EventStatus.UPLOAD_FAILED.value,
