@@ -27,7 +27,7 @@ ADD ./src ./src
 #| tr -d '"' \
 #| wget -i - -O /usr/local/match/match.jar
 
-curl https://github-releases.githubusercontent.com/360239647/60540280-a923-11eb-9a13-e8d48d42aea3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210502T091536Z&X-Amz-Expires=300&X-Amz-Signature=db3b6933372dd222903295922070a01e5ba3ef592a3bc0efc89133108542e64a&X-Amz-SignedHeaders=host&actor_id=45825003&key_id=0&repo_id=360239647&response-content-disposition=attachment%3B%20filename%3Dmini-server-v3.0.1.jar&response-content-type=application%2Foctet-stream -o /usr/local/match/match.jar
+RUN curl https://github-releases.githubusercontent.com/360239647/60540280-a923-11eb-9a13-e8d48d42aea3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210502%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210502T091536Z&X-Amz-Expires=300&X-Amz-Signature=db3b6933372dd222903295922070a01e5ba3ef592a3bc0efc89133108542e64a&X-Amz-SignedHeaders=host&actor_id=45825003&key_id=0&repo_id=360239647&response-content-disposition=attachment%3B%20filename%3Dmini-server-v3.0.1.jar&response-content-type=application%2Foctet-stream -o /usr/local/match/match.jar
 
 # download server configfile
 RUN curl "https://raw.githubusercontent.com/SharifAIChallenge/final-judgment/master/resources/map.config" > /usr/local/match/map.config
